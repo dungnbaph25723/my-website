@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hộp Thoại Di Chuyển Ngẫu Nhiên</title>
+    <link rel="stylesheet" href="style.css"> <!-- Liên kết tới tệp CSS -->
+</head>
+<body>
+
+    <div class="title-a">
+        <h1>HHAHAHAHAH</h1>
+    </div>
+
+    <!-- Hộp thoại "Có" -->
+    <div class="box box-yes" onclick="showImage()">
+        <span>Có</span>
+    </div>
+
+    <!-- Hộp thoại "Không" -->
+    <div class="box box-no">
+        <span>Không</span>
+    </div>
+
+    <!-- Lớp hình ảnh và chữ "Tôi đồng ý" -->
+    <div class="image-container" id="imageContainer">
+        <img src="https://img.tripi.vn/cdn-cgi/image/width=700,height=700/https://gcs.tripi.vn/public-tripi/tripi-feed/img/474113Zud/hinh-anh-canh-dong-hoa-dep-nhat_014855679_thumb.jpg" alt="Beautiful Image">
+        <div class="agree-text">Tôi đồng ý</div>
+    </div>
+
+    <script>
+        // Hàm hiển thị hình ảnh và chữ "Tôi đồng ý" khi bấm vào hộp "Có"
+        function showImage() {
+            document.getElementById("imageContainer").style.display = "block"; // Hiển thị lớp hình ảnh
+        }
+    </script>
+
+</body>
+</html>

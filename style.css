@@ -1,0 +1,128 @@
+/* Đặt nền cho toàn bộ trang */
+body {
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(to right, #ff7e5f, #feb47b); /* Nền gradient */
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Arial', sans-serif;
+    overflow: hidden;
+}
+
+/* Định dạng các hộp thoại */
+.box {
+    width: 200px;
+    height: 120px;
+    background-color: #4CAF50; /* Màu xanh lá */
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 22px;
+    font-weight: bold;
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+    position: absolute;
+    transition: all 0.3s ease; /* Hiệu ứng khi di chuyển */
+}
+
+/* Tiêu đề */
+.title-a {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -150%); /* Điều chỉnh để tạo khoảng cách */
+    font-size: 32px;
+    color: white;
+    margin-bottom: 100px; /* Khoảng cách giữa tiêu đề và hộp thoại */
+}
+
+/* Hộp "Có" đứng yên, hiệu ứng nhẹ */
+.box-yes {
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #28a745; /* Màu xanh đậm */
+    animation: pulse 2s infinite; /* Hiệu ứng nhấp nháy */
+    cursor: pointer; /* Thêm con trỏ chuột khi hover */
+}
+
+/* Hộp "Không" di chuyển ngẫu nhiên */
+.box-no {
+    animation: moveRandom 3s linear infinite; /* Giảm thời gian để tăng tốc độ */
+    background-color: #dc3545; /* Màu đỏ */
+    box-shadow: 0 15px 25px rgba(0,0,0,0.3);
+}
+
+/* Hiệu ứng di chuyển ngẫu nhiên */
+@keyframes moveRandom {
+    0% {
+        top: 10%;  /* Di chuyển gần cạnh trên */
+        left: 10%; /* Di chuyển gần cạnh trái */
+    }
+    25% {
+        top: 20%;  /* Di chuyển thấp hơn */
+        left: 30%; /* Di chuyển sang phải */
+    }
+    50% {
+        top: 50%;  /* Di chuyển giữa màn hình */
+        left: 50%; /* Di chuyển sang giữa */
+    }
+    75% {
+        top: 70%;  /* Di chuyển thấp hơn */
+        left: 70%; /* Di chuyển sang phải */
+    }
+    100% {
+        top: 90%;  /* Di chuyển gần dưới cùng */
+        left: 90%; /* Di chuyển sang phải */
+    }
+}
+
+/* Hiệu ứng nhấp nháy cho hộp "Có" */
+@keyframes pulse {
+    0% {
+        transform: translate(-50%, -50%) scale(1);
+    }
+    50% {
+        transform: translate(-50%, -50%) scale(1.1);
+    }
+    100% {
+        transform: translate(-50%, -50%) scale(1);
+    }
+}
+
+/* Định dạng chữ trong các hộp */
+.box span {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+/* Định dạng cho lớp hình ảnh */
+.image-container {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    color: white;
+    z-index: 1000;
+}
+
+.image-container img {
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+    border-radius: 10px;
+}
+
+.image-container .agree-text {
+    margin-top: 20px;
+    font-size: 24px;
+    font-weight: bold;
+}
